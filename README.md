@@ -13,7 +13,7 @@ If you hit control-c while it is running, it will finish the directory it is sca
 ```
 2.82 MB:
     /Users/aaron/Properties/1989CollegeAve/Title Exam.pdf
-    /Users/aaron/Desktop/ForDivorce/1989 College/Title Exam.pdf
+    /Users/aaron/Desktop/1989 College/Title Exam.pdf
 2.17 MB:
     /Users/aaron/Downloads/IMG_20190105_082502.jpg
     /Users/aaron/Movies/iMovie Library.imovielibrary/First Day/Original Media/IMG_20190105_082502.jpg
