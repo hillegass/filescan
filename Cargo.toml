@@ -1,0 +1,12 @@
+[package]
+name = "filescan"
+version = "0.1.0"
+authors = ["Aaron Hillegass <aaron@bignerdranch.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bytefmt = "0.1.7"
+ctrlc = "3.1.3"
+
