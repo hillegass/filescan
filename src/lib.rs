@@ -1,5 +1,3 @@
-#[allow(dead_code)]
-
 pub mod file_digest {
 
 use std::collections::HashMap;

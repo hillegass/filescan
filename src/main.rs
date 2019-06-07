@@ -2,8 +2,6 @@ use std::env::args_os;
 use std::ffi::OsString;
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
-mod lib;
-use filescan::file_digest::FileDigest;
 use filescan::file_digest;
 
 use bytefmt; // For human-readable memory amounts: "56.2 GB"
@@ -14,7 +12,7 @@ fn main() {
 
     // Set a handler for control-c
     ctrlc::set_handler(move || {
-        unsafe { file_digest::set_interrupted(true) };
+        unsafe { filescan::file_digest::set_interrupted(true) };
     })
     .expect("Error setting Ctrl-C handler");
 
@@ -28,7 +26,7 @@ fn main() {
     }
 
     // Create an empty hash map of file digests and their corresponding paths
-    let mut digests: HashMap<FileDigest, Vec<PathBuf>> = HashMap::new();
+    let mut digests: HashMap<file_digest::FileDigest, Vec<PathBuf>> = HashMap::new();
 
     // Go through the command-line processing making file digests for every file in the directories listed
     for arg in &args {
@@ -44,7 +42,7 @@ fn main() {
     println!("Possible duplicates: {}", digests.len());
 
     // Make a list of the file digests ordered from largest to smallest
-    let mut keys: Vec<&FileDigest> = digests.keys().collect();
+    let mut keys: Vec<&file_digest::FileDigest> = digests.keys().collect();
     keys.sort_by(|a, b| b.file_length.partial_cmp(&a.file_length).unwrap());
 
     // For each unique file digest, list the files that match
