@@ -1,15 +1,13 @@
+use filescan::file_digest;
+use std::collections::HashMap;
 use std::env::args_os;
 use std::ffi::OsString;
 use std::path::{Path, PathBuf};
-use std::collections::HashMap;
-use filescan::file_digest;
 
 use bytefmt; // For human-readable memory amounts: "56.2 GB"
 use ctrlc; // For catching control-c
 
-
 fn main() {
-
     // Set a handler for control-c
     ctrlc::set_handler(move || {
         unsafe { filescan::file_digest::set_interrupted(true) };

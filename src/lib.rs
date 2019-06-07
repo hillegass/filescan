@@ -1,9 +1,9 @@
 pub mod file_digest {
 
-use std::collections::HashMap;
-use std::fs;
-use std::io::prelude::*;
-use std::path::{Path, PathBuf};
+    use std::collections::HashMap;
+    use std::fs;
+    use std::io::prelude::*;
+    use std::path::{Path, PathBuf};
 
     const BUF_SIZE: usize = 4096; // Size of buffer read for digest
     const BYTES_IN_DIGEST: usize = 4; // Size of the digest
