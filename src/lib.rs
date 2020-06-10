@@ -120,7 +120,7 @@ pub mod file_digest {
                     // Make a FileDigest for it
                     let current_digest = match file_digest(&path_buf, flen) {
                         Err(e) => {
-                            eprintln!("Unable to hash {}", e);
+                            eprintln!("Unable to hash {:?}: {}", path_buf, e);
                             continue;
                         }
                         Ok(f) => f,
